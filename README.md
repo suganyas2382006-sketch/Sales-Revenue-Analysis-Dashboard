@@ -122,4 +122,4 @@ This project helps in learning:
 
 ## Author
 
-Submitted by: [Your Name]
+Submitted by: Suganya S
