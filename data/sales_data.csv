@@ -1,4 +1,4 @@
-Order_ID,Date,Product,Category,Region,Quantity,Unit_Price,Revenue
+Order_ID,Date,Product,Category,Region,Sales,Unit_Price,Revenue
 1001,01 02 25,Mouse,Accessories,North,2,20,40
 1002,01 03 25,Keyboard,Accessories,South,5,35,175
 1003,01 04 25,Tablet,Electronics,East,6,300,1800
