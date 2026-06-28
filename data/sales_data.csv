@@ -19,3 +19,29 @@ Order_ID,Date,Product,Category,Region,Sales,Unit_Price,Revenue
 1018,01 19 25,Keyboard,Accessories,North,4,35,140
 1019,01 20 25,Laptop,Electronics,East,2,500,1000
 1020,01 21 25,Tablet,Electronics,West,1,300,300
+# Sidebar filters
+st.sidebar.header("Filters")
+
+product = st.sidebar.multiselect(
+    "Product",
+    df["Product"].unique(),
+    default=df["Product"].unique()
+)
+
+region = st.sidebar.multiselect(
+    "Region",
+    df["Region"].unique(),
+    default=df["Region"].unique()
+)
+
+category = st.sidebar.multiselect(
+    "Category",
+    df["Category"].unique(),
+    default=df["Category"].unique()
+)
+
+df = df[
+    (df["Product"].isin(product)) &
+    (df["Region"].isin(region)) &
+    (df["Category"].isin(category))
+]
