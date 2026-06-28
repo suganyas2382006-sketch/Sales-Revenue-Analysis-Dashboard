@@ -78,3 +78,29 @@ if df is not None:
 
 else:
     st.warning("No dataset found")
+# Revenue by Category
+cat = df.groupby("Category")["Revenue"].sum().reset_index()
+
+fig3 = px.pie(
+    cat,
+    names="Category",
+    values="Revenue",
+    title="Revenue by Category"
+)
+
+st.plotly_chart(fig3, use_container_width=True)
+
+
+# Region Sales
+region_sales = df.groupby(
+    "Region"
+)["Revenue"].sum().reset_index()
+
+fig4 = px.bar(
+    region_sales,
+    x="Region",
+    y="Revenue",
+    title="Region-wise Revenue"
+)
+
+st.plotly_chart(fig4, use_container_width=True)
